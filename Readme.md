@@ -1,3 +1,3 @@
 
 
-![alt text](Architecture.svg "Title")
+![alt text](Architecture.png "Title")

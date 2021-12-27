@@ -1,0 +1,6 @@
+version: v1
+plugins:
+  - name: csharp
+    out: gen/external/csharp
+  - name: openapiv2
+    out: gen/external/openapiv2

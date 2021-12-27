@@ -1,5 +1,10 @@
 version: v1
-name: buf.build/yourorg/myprotos
+lint:
+  use:
+    - DEFAULT
+breaking:
+  use:
+    - FILE
 deps:
   - buf.build/googleapis/googleapis
   - buf.build/grpc-ecosystem/grpc-gateway

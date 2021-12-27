@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+import "messages/v1/item.proto";
+
+package external.v1;
+
+option go_package = "example.com/package/name";
+option csharp_namespace = "Common.Messages";
+
+message Empty {}
+
+service ItemService {
+    rpc PutItemRequest(messages.v1.Item) returns (Empty) {
+        option (google.api.http) = {
+            post: "/v1/example/echo"
+            body: "*"
+          };
+    }
+  }

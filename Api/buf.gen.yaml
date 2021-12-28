@@ -1,6 +1,10 @@
 version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/bufbuild/buf-tour/petstore/gen/proto/go
 plugins:
   - name: csharp
-    out: gen/external/csharp
+    out: gen/csharp
   - name: openapiv2
-    out: gen/external/openapiv2
+    out: gen/openapiv2

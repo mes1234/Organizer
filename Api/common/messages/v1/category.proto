@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package messages.v1;
+
+option csharp_namespace = "Common.Messages";
+
+message Category {
+    string name = 1;
+    int32  category = 2;
+    float  value = 3;
+    google.protobuf.Timestamp time = 4;
+}  

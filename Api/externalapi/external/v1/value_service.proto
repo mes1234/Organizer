@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "base/v1/value.proto";
+import "openapiv2.proto";
+
+package external.v1;
+
+option csharp_namespace = "Common.External";
+
+message AddValueRequest {
+  base.v1.Value value = 1;
+}
+
+message GetValuesRequest {
+  int32 category_id = 1;
+  google.protobuf.Timestamp start_timestamp = 2;
+  google.protobuf.Timestamp stop_timestamp = 3;
+}
+
+message GetValuesResponse {
+  repeated base.v1.Value values = 1;
+}
+
+service ValueService {
+    // option (openapiv2.grpc.gateway.protoc_gen_openapiv2.options) = {
+    //   security_definitions: {
+    //     security: {
+    //       key: "bearer"
+    //       value: {
+    //         type: TYPE_API_KEY
+    //         in: IN_HEADER
+    //         name: "Authorization"
+    //         description: "Authentication token, prefixed by Bearer: Bearer <token>"
+    //       }
+    //     }
+    //   }
+    //   security: {
+    //     security_requirement: {
+    //       key: "bearer"
+    //     }
+    //   }
+    // };
+
+
+    rpc AddValue(AddValueRequest) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+            post: "/v1/add/value"
+            body: "*"
+          };
+    }
+    rpc GetValues(GetValuesRequest) returns (GetValuesResponse) {
+      option (google.api.http) = {
+          get: "/v1/get/values"
+        };
+  }
+
+  }

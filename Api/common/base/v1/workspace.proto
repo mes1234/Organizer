@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package base.v1;
+
+option csharp_namespace = "Common.Base";
+
+message Workspace {
+    int32  id = 1;
+    string name = 2;
+}  

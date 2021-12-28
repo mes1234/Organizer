@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package base.v1;
+
+option csharp_namespace = "Common.Base";
+
+message Category {
+    int32  id = 1;
+    string name = 2;
+    bool  calculated = 3;
+    int32  workspace_id = 4;
+}  

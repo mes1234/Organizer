@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package base.v1;
+
+option csharp_namespace = "Common.Base";
+
+message Value {
+    int32  id = 1;
+    string name = 2;
+    float  value = 3;
+    int32  category_id = 4;
+    google.protobuf.Timestamp timestamp = 5;
+}  

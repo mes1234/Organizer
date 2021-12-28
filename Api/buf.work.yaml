@@ -2,3 +2,4 @@ version: v1
 directories:
   - externalapi
   - common
+  - thirdparty
